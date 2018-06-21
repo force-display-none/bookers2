@@ -8,8 +8,44 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+<header>
+ <div class="container">
+ <div class="row">
+   <div class="col-lg-1"></div>
+   <div class="col-lg-10">
+    <div class="header-logo">Bookers</div>
+  <div class="header-list">
+    <ul>
+       <% if user_signed_in? %>
+        <li><span class="glyphicon glyphicon-home"></span>Home</li>
+      <li><span class="glyphicon glyphicon-user"></span>Users</li>
+      <li><span class="glyphicon glyphicon-book"></span>Books</li>
+      <li><span class="glyphicon glyphicon-log-out"></span><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+       <% else %>
+      <li><span class="glyphicon glyphicon-home"></span>Home</li>
+      <li><span class="glyphicon glyphicon-link"></span><%= link_to 'About', about_path %></li>
+      <li><span class="glyphicon glyphicon-edit"></span><%= link_to 'sign up', new_user_registration_path %></li>
+      <li><span class="glyphicon glyphicon-log-in"></span><%= link_to 'login', new_user_session_path %></li>
+       <% end %>
+    </ul>
+  </div>
+    </div>
+    <div class="col-lg-1"></div>
+ </div>
+ </div>
+</header>
     <%= yield %>
+<footer>
+ <div class="container">
+ <div class="row">
+   <div class="col-lg-2"></div>
+   <div class="col-lg-8">
+  <div class="footer-text">CopyRight Infratop.inc</div>
+   </div>
+   <div class="col-lg-2"></div>
+ </div>
+ </div>
+</footer>
   </body>
 </html>

@@ -1,42 +1,13 @@
-<header>
- <div class="container">
- <div class="row">
-   <div class="col-lg-1"></div>
-   <div class="col-lg-10">
-    <div class="header-logo">Bookers</div>
-	<div class="header-list">
-		<ul>
-			<li><span class="glyphicon glyphicon-home"></span>Home</li>
-			<li><span class="glyphicon glyphicon-link"></span>About</li>
-			<li><span class="glyphicon glyphicon-edit"></span>sign up</li>
-			<li><span class="glyphicon glyphicon-log-out"></span>login</li>
-		</ul>
-	</div>
-    </div>
-    <div class="col-lg-1"></div>
- </div>
- </div>
-</header>
 <div class="main">
 		<h1><strong>welcome to <span class="glyphicon glyphicon-book"></span>Bookers </strong>!!</h1>
 		<p>In <strong>Bookers,</strong></p>
 		<p>you can share and exchange your opinions , inpressions , and emotions about varioius books!</p>
 </div>
 <div class="devise">
-<div><button type="button" class="btn btn-info"><span>Log in</span></button></div>
-<div><button type="button" class="btn btn-success"><span>Sign Up</span></button></div>
+<div><button type="button" class="btn btn-info"><span class="s-b"><%= link_to 'Log in', new_user_session_path %></span></button></div>
+<div><button type="button" class="btn btn-success"><span class="s-b"><%= link_to 'Sign Up', new_user_registration_path %></span></button></div>
 </div>
 
 
 
-<footer>
- <div class="container">
- <div class="row">
-   <div class="col-lg-2"></div>
-   <div class="col-lg-8">
-	<div class="footer-text">CopyRight Infratop.inc</div>
-   </div>
-   <div class="col-lg-2"></div>
- </div>
- </div>
-</footer>
+
