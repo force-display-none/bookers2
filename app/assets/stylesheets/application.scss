@@ -16,6 +16,27 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-body {
-	margin-top: 51px;
+header {
+	height: 50px;
+	background-color: #000;
+	color: #FFF;
+}
+.header-logo {
+	float: left;
+	font-size: 20px;
+}
+.header-list {
+	float: right;
+	line-height: 50px;
+}
+.glyphicon {
+    margin-left: 30px;
+	margin-right: 10px;
+}
+li {
+	list-style: none;
+	float: left;
+}
+.footer-text {
+	float: right;
 }
