@@ -1,0 +1,40 @@
+<div class="container">
+<div class="row">
+<div class="col-lg-1"></div>
+<div class="col-lg-4">
+<div class="user-info">
+	<h2>User info</h2>
+	<img src="#">
+    <div class="user-name">
+    <div class="user-introduction"></div>
+    <div class="user-info-edit">
+         <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-wrench"></span></button>
+    </div>
+</div>
+</div>
+<div class="col-lg-6"></div>
+<div class="col-lg-1"></div>
+</div>
+<div class="row">
+<div class="col-lg-1"></div>
+<div class="col-lg-4">
+<h2>New book</h2>
+<%= form_for (@book) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :opinion %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit "Create book"%>
+  </p>
+<% end %>
+</div>
+<div class="col-lg-1"></div>
+</div>
+</div>

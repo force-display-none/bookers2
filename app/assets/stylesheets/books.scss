@@ -6,6 +6,10 @@
     width: 470px;
 	margin: 0 auto;
 }
+.top-book-icon {
+	margin-left: 10px;
+	margin-right: 0;
+}
 .devise {
     width: 470px;
 	margin: 0 auto;
@@ -13,7 +17,6 @@
 .btn {
 	width: 470px;
 	margin: 0 auto;
-
 }
 .btn span {
 	color: #808080;
@@ -21,6 +24,10 @@
 
 .s-b a {
 	display: block;
-	width: 458px;
-
+	width: 100%;
+	height: 100%;
 }
+.s-b a:link {text-decoration: none;}
+.s-b a:visited {text-decoration: none;}
+.s-b a:hover {text-decoration: none;}
+.s-b a:active {text-decoration: none;}

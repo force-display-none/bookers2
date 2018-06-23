@@ -10,13 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_20_112445) do
+ActiveRecord::Schema.define(version: 2018_06_23_093222) do
 
-  create_table "post_images", force: :cascade do |t|
-    t.text "shop_name"
-    t.text "image_id"
-    t.text "caption"
-    t.integer "user_id"
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_06_20_112445) do
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_image_id"
+    t.text "introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
