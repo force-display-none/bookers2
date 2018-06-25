@@ -1,0 +1,21 @@
+<div class="book-edit">
+	<div class="book-edit-box">
+<h1>Editing Book</h1>
+<%= form_for (@book) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :opinion, "Opinion (200 Character limit)" %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit "Update book", class:"create_book_btn" %>
+  </p>
+<% end %>
+    </div>
+    <%= link_to "Show ", book_path(@book) %>|<%= link_to " Back", books_path() %>
+</div>

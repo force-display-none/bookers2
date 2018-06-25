@@ -1,23 +1,32 @@
 <div class="container">
 <div class="row">
-<div class="col-lg-1"></div>
-<div class="col-lg-4">
+<div class="col-lg-3">
 <div class="user-info">
-	<h2>User info</h2>
-	<img src="#">
-    <div class="user-name"></div>
+    <h2>User info</h2>
+    <!-- :fillでは、投稿された画像の縦横の大きさを指定しています。単位はpxです。(fallbackだと適用されず指定している画像の大きさで表示されます）refileの仕様により、_idを外した状態でカラムを指定しています。 -->
+    <%= attachment_image_tag @user, :user_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+    <div class="user-name-box">
+      <div class="user-name-title">
+        <p class="name">name</p>
+      </div>
+      <div class="user-name-current">
+        <p class="name"><%= @user.name %></p>
+      </div>
+    </div>
+    <div class="user-introduction-box">
+      <div class="user-introduction-title">
+        <p class="introduction">introduction</p>
+      </div>
+      <div class="user-introduction-current">
+        <!-- ↓中央寄せ左頭合わせになっているか確認した方が良い -->
+        <p calss="introduction"><%= current_user.introduction %></p>
+      </div>
+    </div>
     <div class="user-introduction"></div>
     <div class="user-info-edit">
-         <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-wrench"></span></button>
-    </div>
+<%= link_to(edit_user_path(@user.id)) do %><button type="button" class="btn btn-default btn-sm wrench"><span class="glyphicon glyphicon-wrench"></span></button><% end %>
+     </div>
 </div>
-</div>
-<div class="col-lg-6"></div>
-<div class="col-lg-1"></div>
-</div>
-<div class="row">
-<div class="col-lg-1"></div>
-<div class="col-lg-4">
 <h2>New book</h2>
 <%= form_for (@book) do |f| %>
   <p>
@@ -26,15 +35,38 @@
   </p>
 
   <p>
-    <%= f.label :opinion %><br>
+    <%= f.label :opinion, "Opinion (200 Character limit)"  %><br>
     <%= f.text_area :body %>
   </p>
 
   <p>
-    <%= f.submit "Create book"%>
+    <%= f.submit "Create book", class:"create_book_btn" %>
   </p>
 <% end %>
 </div>
-<div class="col-lg-1"></div>
+<div class="col-lg-9">
+<h2>Users</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>image<th>
+      <th>name</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= attachment_image_tag user.user_image, :user_image, :fill, 10, 10, format: 'jpeg', fallback: "no-image-icon.jpg" %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "Show", user_path(user.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
 </div>
+</div>
+

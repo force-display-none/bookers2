@@ -1,0 +1,21 @@
+<div class="container">
+<div class="row">
+<div class="col-lg-1"></div>
+<div class="col-lg-11">
+<h2>User info</h2>
+<%= form_for (@user) do |f| %>
+  <p>
+   <%= f.label :name, "Name (20 Character limit)" %>
+   <%= f.text_field :name %>
+  </p>
+　　<%= f.label :image %>
+    <input type="file" name="user_image">
+  <p>
+    <%= f.label :introduction, "Introduction (50 Character limit)" %>
+    <%= f.text_area :introduction %>
+  </p>
+  <p>
+    <%= f.submit "Update User" %>
+  </p>
+  <% end %>
+</div>

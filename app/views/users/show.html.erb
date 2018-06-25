@@ -2,7 +2,7 @@
 <div class="row">
 <div class="col-lg-3">
 <div class="user-info">
-    <h2>User info</h2>
+	  <h2>User info</h2>
     <!-- :fillでは、投稿された画像の縦横の大きさを指定しています。単位はpxです。(fallbackだと適用されず指定している画像の大きさで表示されます）refileの仕様により、_idを外した状態でカラムを指定しています。 -->
     <%= attachment_image_tag @user, :user_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
     <div class="user-name-box">
@@ -19,7 +19,7 @@
       </div>
       <div class="user-introduction-current">
         <!-- ↓中央寄せ左頭合わせになっているか確認した方が良い -->
-        <p calss="introduction"><%= current_user.introduction %></p>
+        <p calss="introduction"><%= @user.introduction %></p>
       </div>
     </div>
     <div class="user-introduction"></div>
@@ -35,7 +35,7 @@
   </p>
 
   <p>
-    <%= f.label :opinion, "Opinion (200 Character limit)"  %><br>
+    <%= f.label :opinion, "Opinion (200 Character limit)" %><br>
     <%= f.text_area :body %>
   </p>
 
@@ -50,7 +50,7 @@
   <thead>
     <tr>
       <th></th>
-      <th>Title (Please click here!!)</th>
+      <th>Title</th>
       <th>Opinion</th>
       <th colspan="3"></th>
     </tr>

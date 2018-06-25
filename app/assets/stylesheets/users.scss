@@ -1,8 +1,17 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h2{
+.container {
+	margin: 0 10px 0 10px;
+}
+.col-lg-3 {
 	width: 240px;
+	float: left;
+}
+.col-lg-9 {
+	width: 600px;
+	float: right;
+	background-color: #fff;
 }
 .user-info {
 	width: 240px;
@@ -44,6 +53,7 @@ h2{
 }
 .introduction {
 	display: inline-block;
+	margin-top: 5px;
 }
 .user-introduction-current {
 	float: right;
@@ -53,4 +63,15 @@ h2{
 }
 input,textarea {
 	width: 240px;
+}
+.create_book_btn {
+	color: #fff;
+	background-color: #337ab7;
+	border-radius: 3px;
+}
+.create_book_btn:hover {
+	background-color: #336699;
+}
+.edit_user_image {
+	text-aline: center;
 }
