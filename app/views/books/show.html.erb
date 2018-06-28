@@ -18,11 +18,9 @@
         <p class="introduction">introduction</p>
       </div>
       <div class="user-introduction-current">
-        <!-- ↓中央寄せ左頭合わせになっているか確認した方が良い -->
-        <p calss="introduction"><%= @user.introduction %></p>
+        <p class="introduction"><%= @user.introduction %></p>
       </div>
     </div>
-    <div class="user-introduction"></div>
     <div class="user-info-edit">
 <%= link_to(edit_user_path(@user.id)) do %><button type="button" class="btn btn-default btn-sm wrench"><span class="glyphicon glyphicon-wrench"></span></button><% end %>
      </div>
@@ -63,7 +61,7 @@
 
   <tbody>
       <tr>
-        <td><%= attachment_image_tag @user, :user_image, :fill, 10, 10, format: 'jpeg', fallback: "no-image-icon.jpg" %>
+        <td><%= attachment_image_tag @user, :user_image, :fill, 50, 50, format: 'jpeg', fallback: "no-image-icon.jpg" %>
             <%= link_to "#{@user.name}", user_path(@user) %></td>
         <td><%= @book_id.title %></td>
         <td><%= @book_id.body %></td>
@@ -87,7 +85,7 @@
 
   <tbody>
       <tr>
-        <td><%= attachment_image_tag @user, :user_image, :fill, 10, 10, format: 'jpeg', fallback: "no-image-icon.jpg" %>
+        <td><%= attachment_image_tag @user, :user_image, :fill, 50, 50, format: 'jpeg', fallback: "no-image-icon.jpg" %>
             <%= link_to "#{@user.name}", user_path(@user.id) %></td>
         <td><%= @book_id.title %></td>
         <td><%= @book_id.body %></td>

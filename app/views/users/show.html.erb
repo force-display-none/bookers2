@@ -3,8 +3,16 @@
 <div class="col-lg-3">
 <div class="user-info">
 	  <h2>User info</h2>
-    <!-- :fillでは、投稿された画像の縦横の大きさを指定しています。単位はpxです。(fallbackだと適用されず指定している画像の大きさで表示されます）refileの仕様により、_idを外した状態でカラムを指定しています。 -->
-    <%= attachment_image_tag @user, :user_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+    <!-- :fillでは、投稿された画像の縦横の大きさを指定しています。単位はpxです。 -->
+
+    <% if @user.user_image.present? %>
+       <%= attachment_image_tag @user, :user_image, :fill, 200, 200 %>
+    <% else %>
+       <%= image_tag 'no_image.jpg', size: '200x200' %>
+    <% end %>
+
+
+
     <div class="user-name-box">
       <div class="user-name-title">
         <p class="name">name</p>
@@ -18,11 +26,9 @@
         <p class="introduction">introduction</p>
       </div>
       <div class="user-introduction-current">
-        <!-- ↓中央寄せ左頭合わせになっているか確認した方が良い -->
-        <p calss="introduction"><%= @user.introduction %></p>
+        <p class="introduction"><%= @user.introduction %></p>
       </div>
     </div>
-    <div class="user-introduction"></div>
     <div class="user-info-edit">
 <%= link_to(edit_user_path(@user.id)) do %><button type="button" class="btn btn-default btn-sm wrench"><span class="glyphicon glyphicon-wrench"></span></button><% end %>
      </div>
@@ -59,7 +65,11 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= attachment_image_tag @user, :user_image, :fill, 10, 10, format: 'jpeg', fallback: "no-image-icon.jpg" %></td>
+        <td><% if @user.user_image.present? %>
+       <%= attachment_image_tag @user, :user_image, :fill, 50, 50 %>
+    <% else %>
+       <%= image_tag 'no-image-icon.jpg', size: '50x50' %>
+    <% end %></td>
         <td><%= link_to "#{book.title}", book_path(book.id), class: "show_#{book.id}" %></td>
         <td><%= book.body %></td>
       </tr>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :index, :edit, :update]
   # def home
   	  # @book = Book.new
       # @user = current_user
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-      params.require(:user).permit(:name, :introduction, :user_image_id)
+      params.require(:user).permit(:name, :introduction, :user_image)
   end
 
   def book_params

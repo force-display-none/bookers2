@@ -8,8 +8,7 @@
    <%= f.label :name, "Name (20 Character limit)" %>
    <%= f.text_field :name %>
   </p>
-　　<%= f.label :image %>
-    <input type="file" name="user_image">
+    <%= f.attachment_field :user_image %>
   <p>
     <%= f.label :introduction, "Introduction (50 Character limit)" %>
     <%= f.text_area :introduction %>
